@@ -4,4 +4,4 @@ This repository represents a website for DASK, "Divorced and Separated Koinonia"
 
 As the website is completed and hosted, additional details will be available from the website itself.
 
-Unless stated otherwise, all code is licensed under the GNU GPL v3. Please see LICENSE for further details.
+Unless explicitly stated otherwise, all code is licensed under the GNU GPL v3. Please see LICENSE for further details.
