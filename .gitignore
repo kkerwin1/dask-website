@@ -90,3 +90,4 @@ ENV/
 
 # Personal settings
 dask_website/dask_website/settings.py
+dask_website/dask_website/settings.py.bak
