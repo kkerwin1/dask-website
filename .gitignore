@@ -87,3 +87,6 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Personal settings
+dask_website/dask_website/settings.py
