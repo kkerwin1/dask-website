@@ -89,5 +89,4 @@ ENV/
 .ropeproject
 
 # Personal settings
-dask_website/dask_website/settings.py
-dask_website/dask_website/settings.py.bak
+dask_website/dask_website/private.py
