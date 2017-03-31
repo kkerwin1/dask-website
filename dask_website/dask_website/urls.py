@@ -24,5 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Machina
-    url(r'^forum/', include(board.urls)),
+    url(r'^forum/', include(board.urls))
 ]
