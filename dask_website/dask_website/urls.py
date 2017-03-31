@@ -20,9 +20,9 @@ from django.contrib import admin
 from machina.app import board
 
 urlpatterns = [
-    url(r'^polls/', include(polls.urls),
+    url(r'^polls/', include(polls.urls)),
     url(r'^admin/', admin.site.urls),
 
     # Machina
-    url(r'^forum/', include(board.urls))
+    url(r'^forum/', include(board.urls)),
 ]
