@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 ] + get_machina_apps()
 
 MIDDLEWARE_CLASSES = [
-    'polls.apps.PollsConfig',
+    #'polls.apps.PollsConfig',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
