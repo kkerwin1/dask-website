@@ -19,6 +19,8 @@ from django.contrib import admin
 
 from machina.app import board
 
+import polls
+
 urlpatterns = [
     url(r'^polls/', include(polls.urls)),
     url(r'^admin/', admin.site.urls),
