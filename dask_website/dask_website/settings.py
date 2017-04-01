@@ -102,7 +102,8 @@ TEMPLATES = [
             # machina templates
             MACHINA_MAIN_TEMPLATE_DIR,
         ],
-        'APP_DIRS': True,
+        #'APP_DIRS': True,
+        'APP_DIRS': False,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -177,7 +178,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
-StATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 ROLLBAR = {
 	'access_token': secrets.rollbarKey,
