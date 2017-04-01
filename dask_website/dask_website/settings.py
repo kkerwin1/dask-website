@@ -13,9 +13,6 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 import os
 import secrets
 
-from private import serverKey
-from private import rollbarKey
-
 from machina import get_apps as get_machina_apps
 from machina import MACHINA_MAIN_TEMPLATE_DIR
 from machina import MACHINA_MAIN_STATIC_DIR
