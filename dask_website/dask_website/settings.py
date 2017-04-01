@@ -33,6 +33,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "69.164.193.19",
     "dask.ddns.net",
+    "localhost",
 ]
 
 
