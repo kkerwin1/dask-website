@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import secrets
+
 from private import serverKey
 from private import rollbarKey
 
@@ -26,12 +28,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = serverKey
+SECRET_KEY = secrets.serverKey
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "69.164.193.19",
+]
 
 
 # Application definition
@@ -130,8 +134,11 @@ WSGI_APPLICATION = 'dask_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dask_website',
+        'USER': 'dask',
+        'PASSWORD': secrets.postgresPassword,
+        'HOST': 'localhost'
     }
 }
 
@@ -173,9 +180,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+StATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 ROLLBAR = {
-	'access_token': rollbarKey,
+	'access_token': secrets.rollbarKey,
     'environment': 'development' if DEBUG else 'production',
     'root': BASE_DIR,
 }
