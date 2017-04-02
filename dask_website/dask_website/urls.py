@@ -1,30 +1,18 @@
-"""dask_website URL Configuration
+from django.conf.urls.defaults import *
+import registration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.9/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add an import:  from blog import urls as blog_urls
-    2. Import the include() function: from django.conf.urls import url, include
-    3. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
-"""
-from django.conf.urls import url, include
-from django.contrib import admin
+urlpatterns = patterns('',
+    # Example:
+    # (r'^dj_project/', include('dj_project.foo.urls')),
 
-from machina.app import board
-
-#import polls
-
-urlpatterns = [
-#    url(r'^polls/', include(polls.urls)),
-    url(r'^admin/', include(admin.site.urls)),
-
-    # Machina
-    #url(r'^forum/', include(board.urls)),
-]
+    # Uncomment this for admin:
+    (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^dj_survey/', include('dj_project.dj_survey.urls')),
+    (r'^accounts/', include('registration.urls')),
+    (r'^yui/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': '../../svn_views/yui/build','show_indexes': True
+    }),
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {
+        'document_root': './media','show_indexes': True
+    }),
+)
