@@ -134,7 +134,7 @@ WSGI_APPLICATION = 'dask_website.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql+psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dask_website',
         'USER': 'dask',
         'PASSWORD': secrets.postgresPassword,
