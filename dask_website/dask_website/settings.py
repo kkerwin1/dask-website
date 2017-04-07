@@ -11,7 +11,14 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-from . import secrets
+
+with open("/home/dask/secrets/server_key") as server_key_file:
+    SECRET_KEY = server_key_file.read().strip()
+with open("/home/dask/secrets/rollbar_key") as rollbar_key_file:
+    ROLLBAR_KEY = rollbar_key_file.read().strip()
+with open("/home/dask/secrets/postgres_key") as postgres_key_file:
+    POSTGRES_KEY = postgres_key_file.read().strip()
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,7 +28,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = secrets.serverKey
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'dask_website',
         'USER': 'dask',
-        'PASSWORD': secrets.postgresPassword,
+        'PASSWORD': POSTGRES_KEY,
         'HOST': 'localhost'
     }
 }
