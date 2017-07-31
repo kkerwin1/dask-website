@@ -85,11 +85,11 @@ from django.utils.translation import ugettext_lazy as _
 # INSTALLED_APPS setting.
 USE_MODELTRANSLATION = False
 
-with open("/home/dask/secrets/server_key") as server_key_file:
+with open("/srv/www/secrets/server_key") as server_key_file:
     SECRET_KEY = server_key_file.read().strip()
-with open("/home/dask/secrets/rollbar_key") as rollbar_key_file:
+with open("/srv/www/secrets/rollbar_key") as rollbar_key_file:
     ROLLBAR_KEY = rollbar_key_file.read().strip()
-with open("/home/dask/secrets/postgres_key") as postgres_key_file:
+with open("/srv/www/secrets/postgres_key") as postgres_key_file:
     POSTGRES_KEY = postgres_key_file.read().strip()
 
 
@@ -101,8 +101,10 @@ with open("/home/dask/secrets/postgres_key") as postgres_key_file:
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
     "69.164.193.19",
-    "dask.ddns.net",
-    "localhost",
+    "daskretreats.org",
+    "daskretreats.com",
+    "www.daskretreats.org",
+    "www.daskretreats.com", 
 ]
 
 # Local time zone for this installation. Choices can be found here:
@@ -112,7 +114,7 @@ ALLOWED_HOSTS = [
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Chicago'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
