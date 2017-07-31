@@ -25,3 +25,4 @@ django-mptt-0.8.7
 django-widget-tweaks-1.4.1 
 markdown2-2.3.4
 rollbar-0.13.12
+psycopg2-2.7.3
